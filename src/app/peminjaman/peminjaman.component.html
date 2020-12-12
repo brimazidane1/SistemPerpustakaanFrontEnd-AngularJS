@@ -1,0 +1,58 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+                <button type="submit" routerLink="../peminjaman-form" class="btn btn-dark pull-right">Tambahkan Peminjaman</button>
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Daftar Peminjaman</h4>
+                        <p class="card-category">Peminjaman buku yang sedang dipinjam ada disini</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th>
+                                        NIS
+                                    </th>
+                                    <th>
+                                        Nama Siswa
+                                    </th>
+                                    <th>
+                                        Jurusan
+                                    </th>
+                                    <th>
+                                        Tgl Peminjaman
+                                    </th>
+                                    <th>
+                                        Tgl Pengembalian
+                                    </th>
+                                    <th>
+                                        Nama Buku
+                                    </th>
+                                    <th>
+                                        Aksi
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let peminjaman of httpdata">
+                                        <td>{{ peminjaman.nis_siswa }}</td>
+                                        <td>{{ peminjaman.nama_siswa }}</td>
+                                        <td>{{ peminjaman.jurusan_siswa }}</td>
+                                        <td>{{ peminjaman.tgl_peminjaman }}</td>
+                                        <td>{{ peminjaman.tgl_pengembalian }}</td>
+                                        <td>{{ peminjaman.buku_id_buku }}</td>
+                                        <td>
+                                          <button class="btn btn-danger" (click)="deleteData(peminjaman.id_peminjaman)">Hapus</button>
+                                        </td>
+                                      </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  

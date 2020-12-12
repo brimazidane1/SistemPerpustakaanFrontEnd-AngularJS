@@ -1,0 +1,62 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+            <div class="col-md-6">
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title">Edit Buku</h4>
+                      <p class="card-category">Isi form berikut untuk mengedit buku</p>
+                  </div>
+                  <div class="card-body">
+                      <form>
+                            <div class="row">
+                                    <div class="col-md-10">
+                                      <mat-form-field class="example-full-width">
+                                        <mat-select placeholder="Pilih Buku" [(ngModel)]="selectedValue" name="buku">
+                                          <mat-option *ngFor="let buku of httpdata" [value]="buku.id_buku">
+                                            {{buku.judul_buku}}
+                                          </mat-option>
+                                        </mat-select>
+                                      </mat-form-field>
+                                    </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-md-10">
+                                        <mat-form-field class="example-full-width">
+                                          <input matInput placeholder="Ganti Nama Buku" type="text" #nama>
+                                        </mat-form-field>
+                                      </div>
+                                  </div>
+                                    <div class="row">
+                                            <div class="col-md-10">
+                                              <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Penerbit Buku" type="text" #penerbit>
+                                              </mat-form-field>
+                                            </div>
+                                        </div>
+                                            <div class="row">
+                                                    <div class="col-md-10">
+                                                      <mat-form-field class="example-full-width">
+                                                        <input matInput placeholder="Pengarang Buku" type="text" #pengarang>
+                                                      </mat-form-field>
+                                                    </div>
+                                                </div>
+                                                    <div class="row">
+                                                            <div class="col-md-3">
+                                                              <mat-form-field class="example-full-width">
+                                                                <input matInput placeholder="Tahun Terbit" type="text" #tahun>
+                                                              </mat-form-field>
+                                                            </div>
+                                                        </div>
+                              
+      
+                                                        <button (click)="doPUT(selectedValue,nama.value,penerbit.value,pengarang.value,tahun.value)" class="btn btn-danger pull-left" >Simpan Perubahan</button>
+                          <button class="btn btn-dark" routerLink="../buku">Kembali</button>
+                          <div class="clearfix"></div>
+                      </form>
+                  </div>
+              </div>
+</div>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,69 @@
+<div class="main-content">
+        <div class="container-fluid">
+            <div class="row">
+                  <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header card-header-danger">
+                            <h4 class="card-title">Tambah Peminjaman Buku</h4>
+                            <p class="card-category">Isi form berikut untuk menambahkan peminjaman buku</p>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                  <div class="row">
+                                          <div class="col-md-10">
+                                            <mat-form-field class="example-full-width">
+                                              <input matInput placeholder="NIS" type="text" #nis>
+                                            </mat-form-field>
+                                          </div>
+                                          </div>
+                                          <div class="row">
+                                                  <div class="col-md-10">
+                                                    <mat-form-field class="example-full-width">
+                                                      <input matInput placeholder="Nama Siswa" type="text" #nama>
+                                                    </mat-form-field>
+                                                  </div>
+                                              </div>
+                                                  <div class="row">
+                                                          <div class="col-md-10">
+                                                            <mat-form-field class="example-full-width">
+                                                              <input matInput placeholder="Jurusan" type="text" #jurusan>
+                                                            </mat-form-field>
+                                                          </div>
+                                                      </div>
+                                                          <div class="row">
+                                                                  <div class="col-md-4">
+                                                                    <mat-form-field class="example-full-width">
+                                                                      <input matInput placeholder="Tgl Peminjaman" type="text" #pinjam>
+                                                                    </mat-form-field>
+                                                                  </div>
+                                                              </div>
+                                                              <div class="row">
+                                                                <div class="col-md-4">
+                                                                  <mat-form-field class="example-full-width">
+                                                                    <input matInput placeholder="Tgl Pengembalian" type="text" #kembali>
+                                                                  </mat-form-field>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-4">
+                                                                    <mat-form-field>
+                                                                        <mat-select placeholder="ID Buku" [(ngModel)]="selectedValue" name="buku">
+                                                                          <mat-option *ngFor="let buku of httpdata" [value]="buku.id_buku">
+                                                                            {{buku.judul_buku}}
+                                                                          </mat-option>
+                                                                        </mat-select>
+                                                                      </mat-form-field>
+                                                  
+                                                          </div>
+                                                        </div>
+                                                        <button (click)="doPOST(nis.value,nama.value,jurusan.value,pinjam.value,kembali.value,selectedValue)" class="btn btn-danger pull-left" >Tambah Peminjaman</button>
+                                <button class="btn btn-dark" routerLink="../peminjaman">Kembali</button>
+                                <div class="clearfix"></div>
+                            </form>
+                        </div>
+                    </div>
+      </div>
+            </div>
+        </div>
+      </div>
+      

@@ -1,0 +1,54 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+                <button type="submit" routerLink="../buku-form" class="btn btn-dark pull-right">Tambahkan Buku</button>
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Daftar Buku</h4>
+                        <p class="card-category">Seluruh buku diperpustakaan dapat dilihat disini</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <tr>
+                                    <th>
+                                        Judul
+                                    </th>
+                                    <th>
+                                        Penerbit
+                                    </th>
+                                    <th>
+                                        Pengarang
+                                    </th>
+                                    <th>
+                                        Tahun Terbit
+                                    </th>
+                                    <th>
+                                        Aksi
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let buku of httpdata">
+                                        <td>{{ buku.judul_buku}}</td>
+                                        <td>{{ buku.penerbit_buku }}</td>
+                                        <td>{{ buku.pengarang_buku }}</td>
+                                        <td>{{ buku.tahun_terbit_buku }}</td>
+                                        <td>
+                                            <button class="btn btn-danger" (click)="deleteData(buku.id_buku)">Hapus</button>
+                                          
+                                       
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  
